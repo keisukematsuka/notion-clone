@@ -28,7 +28,9 @@ app.get("*", (req, res) => {
 
 // DB接続
 try {
-  mongoose.connect(process.env.MONGODB_URL);
+  mongoose.connect(
+    "mongodb+srv://matsukakeisuke:missing0202@cluster0.eoo8jue.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  );
   console.log("DBと接続中");
 } catch (error) {
   console.log(error);
