@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require("path"); // path モジュールを追加
+const path = require("path");
 const User = require("./src/v1/models/user");
 
 const app = express();
