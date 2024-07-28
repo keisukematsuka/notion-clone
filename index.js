@@ -28,9 +28,13 @@ app.get("*", (req, res) => {
 
 // DB接続
 try {
-  mongoose.connect(process.env.MONGODB_URL || process.env.MONGODB_URI, {
-    tlsAllowInvalidCertificates: true,
-  });
+  mongoose.connect(
+    "mongodb+srv://matsukakeisuke:missing0202@cluster0.eoo8jue.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" ||
+      process.env.MONGODB_URI,
+    {
+      tlsAllowInvalidCertificates: true,
+    }
+  );
   console.log("DBと接続中");
 } catch (error) {
   console.log(error);
