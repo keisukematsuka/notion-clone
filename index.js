@@ -10,7 +10,7 @@ require("dotenv").config();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://notion-clone-692f82db0b79.herokuapp.com",
   })
 );
 app.use(express.json());
