@@ -28,14 +28,11 @@ app.get("*", (req, res) => {
 
 // DB接続
 try {
-  mongoose.connect(process.env.MONGODB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    ssl: true, // SSLを有効にするオプション
-  });
+  mongoose.connect(process.env.MONGODB_URL || process.env.MONGODB_URI);
   console.log("DBと接続中");
 } catch (error) {
   console.log(error);
+  console.log("接続エラー");
 }
 
 // サーバーの起動
