@@ -28,7 +28,9 @@ app.get("*", (req, res) => {
 
 // DB接続
 try {
-  mongoose.connect(process.env.MONGODB_URL || process.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGODB_URL || process.env.MONGODB_URI, {
+    tlsAllowInvalidCertificates: true,
+  });
   console.log("DBと接続中");
 } catch (error) {
   console.log(error);
